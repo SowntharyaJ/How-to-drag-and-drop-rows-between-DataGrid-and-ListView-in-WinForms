@@ -7,7 +7,6 @@
     <AssemblyName>DragDropBetweenControls</AssemblyName>
     <RootNamespace>DragDropBetweenControls</RootNamespace>
     <DefineConstants>NETCORE</DefineConstants>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
