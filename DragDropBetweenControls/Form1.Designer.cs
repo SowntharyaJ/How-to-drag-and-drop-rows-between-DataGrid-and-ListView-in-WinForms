@@ -58,7 +58,7 @@ namespace DragDropBetweenControls
             this.rootTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 75F));
             this.rootTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             this.rootTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            this.rootTable.Padding = new Padding(12);
+            this.rootTable.Padding = new Padding(85);
 
             // ---- Left panel (label + grid) ----
             this.leftPanel.Dock = DockStyle.Fill;
@@ -83,7 +83,6 @@ namespace DragDropBetweenControls
             this.sfDataGrid1.SelectionMode = Syncfusion.WinForms.DataGrid.Enums.GridSelectionMode.Multiple;
             this.sfDataGrid1.ShowGroupDropArea = true;
             this.sfDataGrid1.Dock = DockStyle.Fill;
-            // row heights are scaled in Form1.cs
 
             // add to left panel
             this.leftPanel.Controls.Add(this.sfDataGrid1);
