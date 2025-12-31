@@ -1,9 +1,9 @@
-#Row drag and drop between DataGrid and ListView
 
-To perform dragging between the ListView and SfDataGrid, by using the [GridRowDragDropController.Drop event](https://help.syncfusion.com/cr/windowsforms/Syncfusion.WinForms.DataGrid.Interactivity.RowDragDropController.html#Syncfusion_WinForms_DataGrid_Interactivity_RowDragDropController_Drop) and you must set the `AllowDrop` property as true in the `ListView` while doing the drag and drop operation from `SfDataGrid` with `ListView` control.
+# Row drag and drop between DataGrid and ListView
 
-{% tabs %}
-{% highlight c# %}
+To perform dragging between the ListView and SfDataGrid, by using the [GridRowDragDropController.Drop](https://help.syncfusion.com/cr/windowsforms/Syncfusion.WinForms.DataGrid.Interactivity.RowDragDropController.html#Syncfusion_WinForms_DataGrid_Interactivity_RowDragDropController_Drop) event and you must set the `AllowDrop` property as true in the `ListView` while doing the drag and drop operation from `SfDataGrid` with `ListView` control.
+
+```csharp
 this.listView.ItemDrag += ListView_ItemDrag;
 this.listView.DragEnter += ListView_DragEnter;
 this.listView.DragDrop += listView_DragDrop;
@@ -23,7 +23,7 @@ private void ListView_ItemDrag(object sender, ItemDragEventArgs e)
 private void listView_DragDrop(object sender, DragEventArgs e)
 {
     // Orders being dropped into the ListView
-    var droppedRecords = new List<OrderInfo>();
+    var droppedRecords = new List&lt;OrderInfo&gt;();
     var draggedListViewItem = (ListViewItem)e.Data.GetData(typeof(ListViewItem));
 
     // Detect if the drag source is SfDataGrid
@@ -64,7 +64,7 @@ private void RowDragDropController_Drop(object sender, GridRowDropEventArgs e)
 {
     if (e.IsFromOutsideSource)
     {
-        var draggedOrders = new List<OrderInfo>();
+        var draggedOrders = new List&lt;OrderInfo&gt;();
 
         if (e.Data is IDataObject dataObject)
         {
@@ -91,16 +91,12 @@ private void RowDragDropController_Drop(object sender, GridRowDropEventArgs e)
 
         foreach (var order in draggedOrders)
         {
-            var toRemove = listView1.Items.Cast<ListViewItem>().FirstOrDefault(i => ReferenceEquals(i.Tag, order));
+            var toRemove = listView1.Items.Cast&lt;ListViewItem&gt;().FirstOrDefault(i =&gt; ReferenceEquals(i.Tag, order));
             if (toRemove != null)
                 listView1.Items.Remove(toRemove);
         }
     }
 }
-{% endhighlight %}
-{% endtabs %}
+```
 
-
-![Drag and Drop Between DataGrid and ListView](Assets\DragDropBetweenControls_Image.png)
-
-
+![Drag Drop Between Controls](Assets/DragDropBetweenControls_Image.png)
