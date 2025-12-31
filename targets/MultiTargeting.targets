@@ -1,0 +1,12 @@
+<Project>
+	<PropertyGroup>
+		<UseWindowsForms>true</UseWindowsForms>
+		<TargetFrameworks>net462;net8.0-windows;net9.0-windows;net10.0-windows</TargetFrameworks>
+		<GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<EnableDefaultEmbeddedResourceItems>False</EnableDefaultEmbeddedResourceItems>
+		<EnableDefaultItems>True</EnableDefaultItems>
+		<OutputPath>..\Bin\$(Configuration)</OutputPath>
+		<DefineConstants>NETCORE;TRACE;$(SyncfusionLicensing)</DefineConstants>
+	</PropertyGroup>
+</Project>
